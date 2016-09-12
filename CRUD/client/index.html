@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form role="form" class="form-inline">
+            <div class="form-group">
+                <label for="name" >姓名</label>
+                <input type="text" id="name" class="form-control" name="name"/>
+            </div>
+            <div class="form-group">
+                <label for="age">年龄</label>
+                    <input type="text" id="age" class="form-control" name="age"/>
+            </div>
+        </form>
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <button type="button" class="btn btn-default">查询</button>
+        <button type="button" class="btn btn-default">删除</button>
+        <button type="button" class="btn btn-default">增加</button>
+        <button type="button" class="btn btn-default">编辑</button>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="padding:0;margin-top:100px;">
+            <table class="table table-striped">
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
