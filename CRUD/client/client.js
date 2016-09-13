@@ -8,8 +8,15 @@ $(function(){
     addBtn.on("click",function(){
         name = $("#name").val();
         age = $("#age").val();
+        var data = {"name":name,"age":age}
         $.ajax({
-            
+            type:"POST",
+            crossDomain:true,
+            url:"http://localhost:8080/addUser",
+            data:data,
+            success:function(msg){
+                console.log("hello")
+            }
         })
     })
 })
