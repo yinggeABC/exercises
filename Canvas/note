@@ -1,6 +1,12 @@
 1.不建议使用css指定canvas大小
-2. canvas.width  canvas.height      canvas.getContext("2d")
+2. canvas.width  canvas.height      canvas.getContext("2d")获取绘图的上下文环境
 3. canvas中的绘图是基于状态的，先设定绘图的状态，然后绘制
+4.API   context.lineWidth = 5    context.strokeStyle="red"  context.fillStyle="blue"   context.stroke()  context.fill()
 4.context.arc(centerX,centerY, radius, startingAngle,endingAngle,anticlockwise = false)
 centerX和centerY为圆心的位置，radius为圆半径，startingAngle与endingAngle为起始点和终止点的弧度值
 5. closePath函数对于fill函数是没有用的，即使没有调用closePath，canvas还会将图形封闭，然后fill
+6. 当需要给一个描边的封闭图形填充的时候，应该先填充颜色，再描边，否则描边的lineWidth宽度会被填充色占去一半
+7. 后绘制的图形如果和前面绘制的图形位置重合，那么后绘制图形会遮挡先绘制的图形
+8. context.rect(startX,startY,width,height)
+    context.strokeRect(startX,startY,width,height) //绘制矩形边框
+    context.fillRect(startX,startY,width,height) //填充矩形
