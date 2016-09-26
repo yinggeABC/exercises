@@ -1,0 +1,6 @@
+1.不建议使用css指定canvas大小
+2. canvas.width  canvas.height      canvas.getContext("2d")
+3. canvas中的绘图是基于状态的，先设定绘图的状态，然后绘制
+4.context.arc(centerX,centerY, radius, startingAngle,endingAngle,anticlockwise = false)
+centerX和centerY为圆心的位置，radius为圆半径，startingAngle与endingAngle为起始点和终止点的弧度值
+5. closePath函数对于fill函数是没有用的，即使没有调用closePath，canvas还会将图形封闭，然后fill
