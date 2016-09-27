@@ -10,3 +10,8 @@ centerX和centerY为圆心的位置，radius为圆半径，startingAngle与endin
 8. context.rect(startX,startY,width,height)
     context.strokeRect(startX,startY,width,height) //绘制矩形边框
     context.fillRect(startX,startY,width,height) //填充矩形
+9. context.lineCap  线条起始点和终点的形状
+butt	默认。向线条的每个末端添加平直的边缘。
+round	向线条的每个末端添加圆形线帽。
+square	向线条的每个末端添加正方形线帽。
+   context.lineJoin  线条交汇处形状   miter(default,尖角连接)    bevel斜接     round圆角效果
