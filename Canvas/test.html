@@ -1,24 +1,42 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>canvas</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>触发提示框方法</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style id="jsbin-css">
+        body {
+            padding: 100px;
+        }
+        .btn {
+            margin: 20px 10px 20px;
+        }
+    </style>
 </head>
 <body>
-<canvas id="canvas"></canvas>
-</body>
+<h3>按钮做的提示框</h3>
+<button class="btn btn-default" data-toggle="tooltip" data-placement="left" data-original-title="juzuo" title="">Left</button>
+<button class="btn btn-default" data-toggle="tooltip" data-placement="top" data-original-title="juzuo" title="">Top</button>
+<a class="btn btn-primary"
+   data-toggle="tooltip"
+   data-placement="top"
+   data-original-title="提示框在顶部">
+    提示框在顶部
+</a>
+<a class="btn btn-default" id="myTooltip">标题</a>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
-  var canvas = document.getElementById("canvas")
-  canvas.height=500;
-  canvas.width=500;
-    var context = canvas.getContext("2d")
-    context.moveTo(100,100);
-    context.lineTo(300,300);
-    context.lineWidth=10;
-    context.strokeStyle="red"
-    context.lineCap = "round"
-    context.stroke()
+    $(function(){
+       $("[data-toggle='tooltip']").tooltip();
+        $("#myTooltip").tooltip({
+            title:"这是一个标题",
+            placetop:"left"
+        });
+    })
+
 </script>
+</body>
+
 </html>
