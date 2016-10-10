@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    canvas.height=800;
+    canvas.width=800;
+    var context = canvas.getContext("2d")
+    context.save()
+    context.fillStyle="red"
+    context.translate(100,100)
+    context.fillRect(0,0,200,200)
+    context.restore()
+
+    context.fillStyle="green"
+    context.translate(100,100)
+    context.fillRect(0,0,100,100)
+</script>
+</html>

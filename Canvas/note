@@ -2,8 +2,8 @@
 2. canvas.width  canvas.height      canvas.getContext("2d")获取绘图的上下文环境
 3. canvas中的绘图是基于状态的，先设定绘图的状态，然后绘制
 4.API   context.lineWidth = 5    context.strokeStyle="red"  context.fillStyle="blue"   context.stroke()  context.fill()
-4. context.arc(centerX,centerY, radius, startingAngle,endingAngle,anticlockwise = false)
-centerX和centerY为圆心的位置，radius为圆半径，startingAngle与endingAngle为起始点和终止点的弧度值
+4.context.arc(centerX,centerY, radius, startingAngle,endingAngle,anticlockwise = false)
+centerX和centerY为圆心的位置，radius为圆n半径，startingAngle与endingAngle为起始点和终止点的弧度值;顺时针角度一次为0.5PI, PI, 1.5PI
 5. closePath函数对于fill函数是没有用的，即使没有调用closePath，canvas还会将图形封闭，然后fill
 6. 当需要给一个描边的封闭图形填充的时候，应该先填充颜色，再描边，否则描边的lineWidth宽度会被填充色占去一半
 7. 后绘制的图形如果和前面绘制的图形位置重合，那么后绘制图形会遮挡先绘制的图形
@@ -15,3 +15,11 @@ butt	默认。向线条的每个末端添加平直的边缘。
 round	向线条的每个末端添加圆形线帽。
 square	向线条的每个末端添加正方形线帽。
    context.lineJoin  线条交汇处形状   miter(default,尖角连接)    bevel斜接     round圆角效果
+
+10.图形变换(基础）
+位移 translate(x,y)   将原点移动到(x,y)
+旋转 rotate(deg)  采用弧度
+缩放 scale(sx,sy)     横向缩放sx倍，纵向缩放sy倍,同时对宽高/线条粗细/左上角左边进行缩放
+
+canvas的图形变换是叠加的，可以在变换前context.save()保存当前状态，然后用context.restore(),让状态(尤其是原点位置）恢复到save的时候
+

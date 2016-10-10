@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas")
+    canvas.width=800
+    canvas.height=800
+    var context = canvas.getContext("2d")
+    context.fillStyle = "green"
+    context.translate(50,50)
+    context.scale(3,3)
+    context.fillRect(0,0,200,200)
+    context.strokeRect(0,0,200,200) //lineWidth translate 和 width height都变化
+
+</script>
+</html>
