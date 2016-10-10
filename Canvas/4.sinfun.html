@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<bovas id="canvas"></canvas>
+<body>
+<canvas id="canvas"></canvas>
     </body>
     <script>
         var canvas = document.getElementById("canvas")
-        canvas.width=800;dy>
-<can
+        canvas.width=800;
     canvas.height=800;
     var context = canvas.getContext("2d");
     context.strokeStyle="blue"
-    context.lineStyle = 2;
+    context.lineWidth = 2;
     context.beginPath();
     for (var i=0;i<1000;i++){
         context.lineTo(i+100,100+10*Math.sin(Math.PI*i/100))
