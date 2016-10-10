@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas")
+    canvas.height=800
+    canvas.width=800
+    var context = canvas.getContext("2d")
+    var image = new Image()
+    image.src="./favicon.ico";
+    image.onload = function(){
+        var pat = context.createPattern(image,"repeat");
+        context.fillStyle = pat;
+        context.fillRect(0,0,300,300)
+    }
+
+</script>
+</html>

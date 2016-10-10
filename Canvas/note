@@ -23,3 +23,23 @@ square	向线条的每个末端添加正方形线帽。
 
 canvas的图形变换是叠加的，可以在变换前context.save()保存当前状态，然后用context.restore(),让状态(尤其是原点位置）恢复到save的时候
 
+11. 线性渐变
+var grd=context.createLinearGradient(xstart,ystart,xend,yend) xstart/ystart表示渐变色开始的坐标
+grd.addColorStop(0.0,"#fff") 将(xstart,ystart)和(xend,yend)之间的区域分成10分，0.0表示第一部份，同理0.1，0.2
+grd.addColorStop(0.3,"#ccc")
+grd.addColorStop(1.0,"#000")
+context.fillStyle=grd;
+
+12. 径向渐变
+var grd = context.createRadialGradient(x0,y0,r0,x1,y1,r1)  (x0,y0)为第一个同心圆圆心，r0为第一个同心圆半径
+grd.addColorStop(0.0,"#fff")
+grd.addColorStop(0.2,"#ccc")
+grd.addColorStop(1.0,"#000")
+context.fillStyle = grd;
+13.createPattern
+createPattern(img,repeat-style)
+repeat style: repeat-x, repeat-y, no-repeat, repeat(横纵向都重复）
+
+createPattern(canvas,repeat style)
+
+createPattern(video, repeat style)
