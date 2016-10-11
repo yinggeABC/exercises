@@ -1,0 +1,18 @@
+1. 2011 年，twitter 发明，是一个html  css js工具集，基于CSS3和HTML5。是一个前端开发框架
+   bootstrap3放弃了IE7的支持
+2. Bootstrap的所有插件依赖于jquery， 则jquery在bootstrap.js之前引入
+3. 在做移动浏览器开发时，加上
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 让视口宽度为屏幕宽度，并且不缩放
+
+4.
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    当浏览器低于IE9时，引入html5shiv让IE6-8支持H5标签， respond让IE6-8支持媒体查询
+
+5.  bootstrap是移动设备优先的
+6.  <hr/>标签在HTML中创建一条水平线
