@@ -37,9 +37,16 @@ grd.addColorStop(0.2,"#ccc")
 grd.addColorStop(1.0,"#000")
 context.fillStyle = grd;
 13.createPattern
-createPattern(img,repeat-style)
+var img = new Image()
+img.src="../xx.jpg"
+img.onload = function(){
+var pat = createPattern(img,repeat-style)
+context.fillStyle = pat;
+...
+}
+
 repeat style: repeat-x, repeat-y, no-repeat, repeat(横纵向都重复）
 
-createPattern(canvas,repeat style)
+createPattern(canvas,repeat-style)
 
-createPattern(video, repeat style)
+createPattern(video, repeat-style) //不讲
