@@ -38,7 +38,7 @@
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs">
@@ -65,12 +65,30 @@
                         <li><a href="#">IE</a></li>
                     </ul>
                 </li>
-                <li><a href="#">关于</a></li>
+                <li><a data-toggle="modal" href="#dialog">关于</a></li>
             </ul>
         </div>
 
     </div>
 </nav>
+<div class="modal fade" id="dialog" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">本站介绍</h4>
+                </div>
+                <div class="modal-body">
+                    <p>本网站简单介绍了几种常用的浏览器以及它们的下载地址</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">知道了</button>
+                </div>
+            </div>
+        </div>
+</div>
 <div class="carousel ride" data-ride="carousel" id="car">
     <ol class="carousel-indicators">
         <li class="active" data-target="#car" data-slide-to="1"></li>
@@ -81,7 +99,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <a href="#"><img src="./images/chrome-big.jpg" alt=""></a>
+            <a href="#"><img src="chrome-big.jpg" alt=""></a>
             <div class="carousel-caption">
                 <h1>软件介绍</h1>
                 <p>Google Chrome是由Google开发的一款设计简单、高效的Web浏览工具.</p>
@@ -89,7 +107,7 @@
             </div>
         </div>
         <div class="item">
-            <a href="#"><img src="./images/firefox-big.jpg" alt=""></a>
+            <a href="#"><img src="firefox-big.jpg" alt=""></a>
             <div class="carousel-caption">
                 <h1>软件介绍</h1>
                 <p>Mozilla Firefox，中文俗称“火狐”（正式缩写为Fx或fx，非正式缩写为FF），是一个自由及开放源代码网页浏览器，使用Gecko排版引擎，支持多种操作系统，如Windows、Mac OS X及GNU/Linux等</p>
@@ -97,7 +115,7 @@
             </div>
         </div>
         <div class="item">
-            <a href="#"><img src="./images/opera-big.jpg" alt=""></a>
+            <a href="#"><img src="opera-big.jpg" alt=""></a>
             <div class="carousel-caption">
                 <h1>软件介绍</h1>
                 <p>Opera浏览器，是一款挪威Opera Software ASA公司制作的支持多页面标签式浏览的网络浏览器，是跨平台浏览器可以在Windows、Mac和Linux三个操作系统平台上运行。</p>
@@ -105,7 +123,7 @@
             </div>
         </div>
         <div class="item">
-            <a href="#"><img src="./images/safari-big.jpg" alt=""></a>
+            <a href="#"><img src="safari-big.jpg" alt=""></a>
             <div class="carousel-caption">
                 <h1>软件介绍</h1>
                 <p>Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器，使用了KDE的KHTML作为浏览器的运算核心。</p>
@@ -113,7 +131,7 @@
             </div>
         </div>
         <div class="item">
-            <a href="#"><img src="./images/ie-big.jpg" alt=""></a>
+            <a href="#"><img src="ie-big.jpg" alt=""></a>
             <div class="carousel-caption">
                 <h1>软件介绍</h1>
                 <p>Internet Explorer，是微软公司推出的一款网页浏览器。</p>
@@ -131,17 +149,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <img src="./images/chrome-logo-small.jpg" alt="" class="img-circle">
+            <img src="chrome-logo-small.jpg" alt="" class="img-circle">
             <p>Google Chrome是由Google开发的一款设计简单、高效的Web浏览工具.</p>
             <a class="btn btn-primary" href="http://www.chromeliulanqi.com/">点此下载</a>
         </div>
         <div class="col-md-4">
-            <img src="./images/firefox-logo-small.jpg" alt="">
+            <img src="firefox-logo-small.jpg" alt="">
             <p>Mozilla Firefox，中文俗称“火狐”（正式缩写为Fx或fx，非正式缩写为FF），是一个自由及开放源代码网页浏览器</p>
             <a class="btn btn-primary" href="http://www.firefox.com.cn/">点此下载</a>
         </div>
         <div class="col-md-4">
-            <img src="./images/safari-logo-small.jpg" alt="">
+            <img src="safari-logo-small.jpg" alt="">
             <p>Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器，使用了KDE的KHTML作为浏览器的运算核心。</p>
             <a class="btn btn-primary" href="http://rj.baidu.com/soft/detail/12966.html?ald">点此下载</a>
         </div>
@@ -163,7 +181,7 @@
         <p>Google Chrome是由Google开发的一款设计简单、高效的Web浏览工具.</p>
     </div>
   <div class="col-md-5">
-      <img class="feature-img img-responsive" src="./images/chrome-logo.jpg" alt="">
+      <img class="feature-img img-responsive" src="chrome-logo.jpg" alt="">
   </div>
         </div>
         </div>
@@ -174,7 +192,7 @@
                 <p>Mozilla Firefox，中文俗称“火狐”（正式缩写为Fx或fx，非正式缩写为FF），是一个自由及开放源代码网页浏览器</p>
             </div>
             <div class="col-md-5">
-                <img class="img-responsive" src="./images/firefox-logo.jpg" alt="">
+                <img class="img-responsive" src="firefox-logo.jpg" alt="">
             </div>
             </div>
         </div>
@@ -185,7 +203,7 @@
                 <p>Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器，使用了KDE的KHTML作为浏览器的运算核心。</p>
             </div>
           <div class="col-md-5">
-              <img class="img-responsive" src="./images/safari-logo.jpg" alt="">
+              <img class="img-responsive" src="safari-logo.jpg" alt="">
           </div>
             </div>
         </div>
@@ -196,7 +214,7 @@
                 <p>Opera浏览器，是一款挪威Opera Software ASA公司制作的支持多页面标签式浏览的网络浏览器，是跨平台浏览器可以在Windows、Mac和Linux三个操作系统平台上运行。</p>
             </div>
             <div class="col-md-5">
-                <img class="img-responsive" src="./images/opera-logo.jpg" alt="">
+                <img class="img-responsive" src="opera-logo.jpg" alt="">
             </div>
         </div>
         </div>
@@ -207,14 +225,14 @@
                 <p>Internet Explorer，是微软公司推出的一款网页浏览器。</p>
             </div>
            <div class="col-md-5">
-               <img class="img-responsive" src="./images/ie-logo.jpg" alt="">
+               <img class="img-responsive" src="ie-logo.jpg" alt="">
            </div>
         </div>
         </div>
     </div>
     <footer>
-    <p class="pull-right"><a href="#top">回到顶部</a></p>
-    <p>浏览器博物馆藏</p>
+    <p class="pull-right"><a href="#top" class="text-muted">回到顶部</a></p>
+    <p class="text-muted">浏览器博物馆藏</p>
 </footer>
 </div>
 

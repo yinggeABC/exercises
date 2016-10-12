@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style>
+        html,body{
+            height:100%;
+            padding-top:30px;
+        }
+        .navbar{
+            padding-right:10px;
+        }
+        .row{
+            height:100%;
+        }
+        .nav-part{
+            height:100%;
+            background:#eee;
+        }
+        .v-divider{
+            height:5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#col">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">订单管理系统</a>
+    </div>
+    <div class="collapse navbar-collapse" id="col">
+    <ul class="nav navbar-nav">
+<li class="active"><a href="#">首页</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">功能
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">查询进度</a></li>
+                <li><a href="#">取消订单</a></li>
+            </ul>
+        </li>
+        <li><a href="#">帮助</a></li>
+    </ul>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" placeholder="用户名..." class="form-control"/>
+                <input type="text" placeholder="密码..." class="form-control"/>
+            </div>
+            <button type="button" class="btn btn-default">登录</button>
+        </form>
+</div>
+</div>
+<div class="row">
+    <div class="col-sm-2 nav-part">
+     <ul class="nav nav-pills nav-stacked">
+         <li class="active"><a href="#">首页</a></li>
+         <li class="v-divider"></li>
+         <li><a href="#">信息建立</a></li>
+         <li><a href="#">信息查询</a></li>
+         <li><a href="#">信息管理</a></li>
+         <li class="v-divider"></li>
+         <li><a href="#">设置</a></li>
+         <li><a href="#">帮助</a></li>
+     </ul>
+    </div>
+    <div class="col-sm-10">
+
+    </div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
