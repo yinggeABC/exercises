@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    var canvas = document.getElementById("canvas")
+    canvas.width=600
+    canvas.height=600
+    var context = canvas.getContext("2d")
+    context.font="bold 40px Arial";
+    context.fillStyle="#058";
+    context.fillText("欢迎你",40,100)
+    context.strokeStyle="#058";
+    context.lineWidth = 1
+    context.strokeText("欢迎你",40,200)
+
+    var grd = context.createLinearGradient(40,300,240,300);
+    grd.addColorStop(0.0,"red")
+    grd.addColorStop(0.25,"orange")
+    grd.addColorStop(0.5,"yellow")
+    grd.addColorStop(0.75,"green")
+    grd.addColorStop(1.0,"purple")
+    context.fillStyle = grd;
+    context.fillText("欢迎你",40,300)
+
+    var img = new Image()
+    img.src="favicon.ico"
+    img.onload = function(){
+        var grd = context.createPattern(img,"repeat")
+        context.fillStyle = grd;
+        context.fillText("欢迎你",40,400)
+
+    }
+
+
+</script>
+</body>

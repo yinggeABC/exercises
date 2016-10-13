@@ -50,3 +50,18 @@ repeat style: repeat-x, repeat-y, no-repeat, repeat(横纵向都重复）
 createPattern(canvas,repeat-style)
 
 createPattern(video, repeat-style) //不讲
+
+13. context.arcTo(x1,y1,x2,y2,r)(比较复杂，不如贝塞尔曲线常用）
+    context.quadraticCurveTo(x1,y1,x2,y2)  （x1,y1为起始点坐标，x2,y2为终止点坐标）
+
+14. Canvas中设置文字
+context.font="bold 40px Arial"
+
+context.fillStyle="#58"
+context.fillText("欢迎",40,100)
+
+context.strokeStyle="#58"
+context.strokeText("欢迎"，40，200)
+
+context.fillText与context.strokeText的API 为  name(string,x,y,maxlen), string为写的字符串，x,y为字符串的起始位置，maxlen为字符串最大
+能占据多少个像素，如果超过，则挤压字符串
