@@ -4,7 +4,6 @@
 3. 在做移动浏览器开发时，加上
  <meta name="viewport" content="width=device-width, initial-scale=1">
  让视口宽度为屏幕宽度，并且不缩放
-906772533
 4.
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,4 +18,27 @@
 7. hover在a标签上的时候显示手形，是href的作用，如果a标签不带href，就是箭头形状
 8. bg-primary 定义块级元素的背景
 9. 想要让body占据整个屏幕高度，就必须设置为  html, body{height:100%}, 因为默认html高度为auto,单独设置body不会有效果
-10. 响应式布局就是让一个网站可以兼容不同分辨率的设备，移动互联网催生了响应式布局的诞生
+10. 想要实现响应式布局，三种方法： 媒体查询     javascript原生方法（不推荐）     第三方库（bootstrap等）
+11. 媒体查询   device-height   device-width(屏幕宽高）        width    height（渲染窗口的宽高）    orientation (设备方向）  resolution(设备分辨率）
+ <link rel="stylesheet" href="./test.css" type="text/css" media="screen and (min-width:480px)"/> //外联样式
+    <style>           //内联样式
+        @media screen and (max-width:480px){
+            body{
+                background:red;
+            }
+        }
+    </style>
+
+12. bootstrap支持响应式布局的辅助类：
+.visible-xs 额外的小设备（小于 768px）可见
+.visible-sm 小型设备（768 px 起）可见
+.visible-md 中型设备（768 px 到 991 px）可见
+.visible-lg 大型设备（992 px 及以上）可见
+.hidden-xs 额外的小设备（小于 768px）隐藏
+.hidden-sm 小型设备（768 px 起）隐藏
+.hidden-md 中型设备（768 px 到 991 px）隐藏
+.hidden-lg 大型设备（992 px 及以上）隐藏
+e.g.  <p class="visible-xs">极小的设备才能看到这个内容</p>
+
+13. bootstrap的核心是栅格化布局
+
