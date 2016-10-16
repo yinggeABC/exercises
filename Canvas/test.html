@@ -1,42 +1,58 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>触发提示框方法</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <style id="jsbin-css">
-        body {
-            padding: 100px;
-        }
-        .btn {
-            margin: 20px 10px 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
-<body>
-<h3>按钮做的提示框</h3>
-<button class="btn btn-default" data-toggle="tooltip" data-placement="left" data-original-title="juzuo" title="">Left</button>
-<button class="btn btn-default" data-toggle="tooltip" data-placement="top" data-original-title="juzuo" title="">Top</button>
-<a class="btn btn-primary"
-   data-toggle="tooltip"
-   data-placement="top"
-   data-original-title="提示框在顶部">
-    提示框在顶部
-</a>
-<a class="btn btn-default" id="myTooltip">标题</a>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script>
-    $(function(){
-       $("[data-toggle='tooltip']").tooltip();
-        $("#myTooltip").tooltip({
-            title:"这是一个标题",
-            placetop:"left"
-        });
-    })
-
-</script>
+<body onload="wenben();">
+<form method="POST" action="" onSubmit="return add_jy(this)">
+    <table width="300" cellspacing="0" cellpadding="1" border="0" bgcolor="buttonface">
+        <tr>
+            <td  height="20px" width="22px"  onclick='doclick("Bold")'>
+                <img align="absmiddle" id="e_bold" src='bold.gif' width="20px" height="20px" border="0">
+            </td>
+            <td height="20px" width="22px" onclick='doclick("Italic")'>
+                <img  align="absmiddle" id="e_italic" src='italic.gif' width="20" height="20" border=0>
+            </td>
+            <td height="20px" width="22px" onclick='doclick("underline")'>
+                <img align="absmiddle" id="e_underline" src='underline.gif' width="20" height="20" border=0>
+            </td>
+            <td width=234>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <iframe id="Editor" name="Editor" border="0" scroll="no" width="300" height="200" style="margin:0px"></iframe><input name="xxnr" type="hidden">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align=center height=25><input type="submit" name=b1></td>
+        </tr>
+    </table></form>
 </body>
+<script language="javascript">
+    <!--
+    function wenben()
+    {
+        Editor.document.designMode = "On";
+    }
+
+    function add_jy(theform)
+    {
+        theform.xxnr.value=Editor.frames.document.body.innerhtml;
+        if (confirm("你确定要发布信息吗?\n\n")){
+            return(true);
+        }else{
+            return(false);
+        }
+    }
+    function doclick(str)
+    {
+        var m_objTextRange = Editor.document.selection.createRange();
+        m_objTextRange.execCommand(str) ;
+    }
+    // -->
+</script>
 
 </html>
+
+

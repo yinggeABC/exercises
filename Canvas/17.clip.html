@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    var canvas = document.getElementById("canvas")
+    canvas.width = 600
+    canvas.height=600
+    var cxt = canvas.getContext("2d")
+    cxt.fillStyle = "#000"
+    cxt.fillRect(0,0,canvas.width,canvas.height)
+    cxt.fillStyle = "#fff"
+    cxt.arc(300,300,100,0,Math.PI*2)
+    cxt.fill()
+    cxt.clip()
+    cxt.font = "bold 80px Arial"
+    cxt.fillStyle = "blue"
+    cxt.textAlign = "center"
+    cxt.textBaseline = "middle"
+    cxt.fillText("CANVAS",300,300)
+</script>
+</body>
+</html>

@@ -65,3 +65,38 @@ context.strokeText("欢迎"，40，200)
 
 context.fillText与context.strokeText的API 为  name(string,x,y,maxlen), string为写的字符串，x,y为字符串的起始位置，maxlen为字符串最大
 能占据多少个像素，如果超过，则挤压字符串
+
+15. context.font默认为"20px sans-serif",可以设置为：“
+font-style(normal, italic)  font-variant(normal small-caps小写字母变成大写)  font-weight（normal400, bold700)  font-size font-family
+
+16.context.textAlign (left right center)  定义水平对齐方式
+   context.textBaseline  (top middle bottom)  定义垂直对齐方式
+   context.measureText(string).width  测试文本的宽度（px)，和context.font的设置有关
+
+17. 剪切区域
+context.clip() 将clip之前定义的封闭路径作为当前的绘制环境
+
+18. 清空画布
+context.clearRect(0,0,canvas.width,canvas.height)  常用在动画中
+
+19. canvas非零环绕原则，就是绘制的第一个图形顺时针，其余图形逆时针，这几个图形就是一个整体，而不是各自的个体
+
+20. context.isPointInPath(x,y)判断（x,y）是否在当前规划的路径内
+
+21. var x = event.clientX - canvas.getBoundingClientRect().left;
+            var y = event.clientY - canvas.getBoundingClientREct().top;
+   这两句是固定的用来得到鼠标在canvas中相对位置的，其中，getBoundingClientRect得到canvas相对于DOM文档的距离,是javascript提供的函数
+
+
+22.context.shadowColor = "black"
+    context.shadowOffsetX = 5;
+    context.shadow.offsetY =5;
+    context.shadow.blur = 10 //阴影半径
+
+23. Canvas与IE 6,7,8的兼容性   用explorecanvas第三方库
+https://code.google.com/p/explorecanvas是托管
+<!--[if lt IE 9]><script src=".../explorecanvas"></script><![endif]-->
+24. canvas图形库： canvasplus   Artisan JS      Rgraph    封装了常用的图形绘制方法
+25. context.drawImage(img,dx,dy)   img是一个图像对象   dx,dy为绘制起始点
+     context.drawImage(img,dx,dy,dwidth,dheight)   dwidth, dheight定义将图片绘制为宽dwidth，高dheight
+     context.drawImage(img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)  将canvas中(sx,sy)处swidth,sheight的图像剪下来绘制到(dx,dy)处
