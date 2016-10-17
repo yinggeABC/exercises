@@ -6,21 +6,19 @@
 </head>
 <body>
 <canvas id="canvas"></canvas>
+
 </body>
 <script>
     var canvas = document.getElementById("canvas")
     canvas.width=800
     canvas.height=800
     var context = canvas.getContext("2d")
+    context.fillStyle="red"
+    context.fillRect(0,0,canvas.width,canvas.height)
     var img = new Image()
-    window.onload = function(){
-        img.src = "./favicon.ico"
-        img.onload = function(){ //等图片加载完成
-            context.drawImage(img,0,0,canvas.width,canvas.height)  //drawImage使用图片原始尺寸
-        }
-
-    }
-
-
+    img.src = canvas.toDataURL("image/png")
+    var oImg = document.createElement("img")
+    oImg.src = img.src
+    document.body.appendChild(oImg)
 </script>
 </html>
