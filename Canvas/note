@@ -99,4 +99,4 @@ https://code.google.com/p/explorecanvas是托管
 24. canvas图形库： canvasplus   Artisan JS      Rgraph    封装了常用的图形绘制方法
 25. context.drawImage(img,dx,dy)   img是一个图像对象   dx,dy为绘制起始点
      context.drawImage(img,dx,dy,dwidth,dheight)   dwidth, dheight定义将图片绘制为宽dwidth，高dheight
-     context.drawImage(img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)  将canvas中(sx,sy)处swidth,sheight的图像剪下来绘制到(dx,dy)处
+     context.drawImage(img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)  将img中(sx,sy)（sx,sy是相对于img的），处swidth,sheight的图像剪下来绘制到(dx,dy)处

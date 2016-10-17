@@ -3,54 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        .mark{
+            position:absolute;
+            top:20px;
+            left:20px;
+            width:50px;
+            height:50px;
+            border:1px dashed #000;
+        }
+        #canvas{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #canvas1{
+            position:absolute;
+            top:0;
+            left:500px;
+        }
+    </style>
 </head>
-<body onload="wenben();">
-<form method="POST" action="" onSubmit="return add_jy(this)">
-    <table width="300" cellspacing="0" cellpadding="1" border="0" bgcolor="buttonface">
-        <tr>
-            <td  height="20px" width="22px"  onclick='doclick("Bold")'>
-                <img align="absmiddle" id="e_bold" src='bold.gif' width="20px" height="20px" border="0">
-            </td>
-            <td height="20px" width="22px" onclick='doclick("Italic")'>
-                <img  align="absmiddle" id="e_italic" src='italic.gif' width="20" height="20" border=0>
-            </td>
-            <td height="20px" width="22px" onclick='doclick("underline")'>
-                <img align="absmiddle" id="e_underline" src='underline.gif' width="20" height="20" border=0>
-            </td>
-            <td width=234>&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                <iframe id="Editor" name="Editor" border="0" scroll="no" width="300" height="200" style="margin:0px"></iframe><input name="xxnr" type="hidden">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4" align=center height=25><input type="submit" name=b1></td>
-        </tr>
-    </table></form>
+<body>
+<canvas id="canvas" style="width:150px;height:150px;border:1px solid #ccc;"></canvas>
+    <canvas id="canvas1" style="width:300px;height:300px;border:1px solid #ccc;"></canvas>
+<div class="mark" id="mark"></div>
 </body>
 <script language="javascript">
-    <!--
-    function wenben()
-    {
-        Editor.document.designMode = "On";
-    }
+var oMark = document.getElementById("mark")
+var canvas = document.getElementById("canvas")
+var img = new Image()
+img.src="./kitty.jpg"
+img.onload = function(){
+    var cxt = canvas.getContext("2d")
+    cxt.drawImage(img,0,0,canvas.width,canvas.height)
+    var srcX = oMark.offsetLeft - canvas.offsetLeft-oMark.clientLeft;
+    var srcY = oMark.offsetTop - canvas.offsetTop-oMark.clientTop;
+    var imgX = img.width*srcX/canvas.offsetWidth;
+    var imgY = img.height*srcY/canvas.offsetHeight;
 
-    function add_jy(theform)
-    {
-        theform.xxnr.value=Editor.frames.document.body.innerhtml;
-        if (confirm("你确定要发布信息吗?\n\n")){
-            return(true);
-        }else{
-            return(false);
-        }
-    }
-    function doclick(str)
-    {
-        var m_objTextRange = Editor.document.selection.createRange();
-        m_objTextRange.execCommand(str) ;
-    }
-    // -->
+    var canvas1 = document.getElementById("canvas1")
+    var cxt1 = canvas1.getContext("2d")
+    cxt1.drawImage(img,imgX,imgY,oMark.offsetWidth,oMark.offsetHeight,0,0,canvas1.width,canvas1.height)
+}
+
+
+
+
 </script>
 
 </html>
