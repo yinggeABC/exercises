@@ -65,7 +65,6 @@ context.strokeText("欢迎"，40，200)
 
 context.fillText与context.strokeText的API 为  name(string,x,y,maxlen), string为写的字符串，x,y为字符串的起始位置，maxlen为字符串最大
 能占据多少个像素，如果超过，则挤压字符串
-
 15. context.font默认为"20px sans-serif",可以设置为：“
 font-style(normal, italic)  font-variant(normal small-caps小写字母变成大写)  font-weight（normal400, bold700)  font-size font-family
 
@@ -84,7 +83,7 @@ context.clearRect(0,0,canvas.width,canvas.height)  常用在动画中
 20. context.isPointInPath(x,y)判断（x,y）是否在当前规划的路径内
 
 21. var x = event.clientX - canvas.getBoundingClientRect().left;
-            var y = event.clientY - canvas.getBoundingClientREct().top;
+            var y = event.clientY - canvas.getBoundingClientRect().top;
    这两句是固定的用来得到鼠标在canvas中相对位置的，其中，getBoundingClientRect得到canvas相对于DOM文档的距离,是javascript提供的函数
 
 
@@ -100,3 +99,5 @@ https://code.google.com/p/explorecanvas是托管
 25. context.drawImage(img,dx,dy)   img是一个图像对象   dx,dy为绘制起始点
      context.drawImage(img,dx,dy,dwidth,dheight)   dwidth, dheight定义将图片绘制为宽dwidth，高dheight
      context.drawImage(img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)  将img中(sx,sy)（sx,sy是相对于img的），处swidth,sheight的图像剪下来绘制到(dx,dy)处
+26. 凡是用图片地址显示图片的地方，都能用dataurl, 其中，dataurl = canvas.toDataUrl("image/png")
+
