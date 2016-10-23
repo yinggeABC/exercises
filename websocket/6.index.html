@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="radio" value="group1" name="group"/>大厅1
+<input type="radio" value="group2" name="group"/>大厅2
+<input type="text" id="chat"/>
+<button onclick="joinRoom1()">聊天室1</button>
+<button onclick="joinRoom2()">聊天室2</button>
+<button onclick="send()">发送</button>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    window.onload = function(){
+
+        var socket1 = io.connect("/group1");
+        socket1.on("connect", function () {
+            socket1.on("message", function (msg) {
+                console.log(msg)
+            })
+        })
+
+        var socket2 = io.connect("/group2")
+        socket2.on("connect",function(){
+            socket2.on("message",function(msg){
+                console.log(msg)
+            })
+        })
+
+        window.joinRoom1  = function(){
+            socket1.emit("room","room1")
+        }
+
+        window.joinRoom2 = function(){
+            socket1.emit("room","room2")
+        }
+
+       window.send = function(){
+           var group1 = document.querySelector("[value*='1']");
+
+           if (group1.checked)
+            socket1.emit("message",document.querySelector("#chat").value);
+           else
+           socket2.emit("message",document.querySelector("#chat").value);
+        }
+    }
+
+</script>
+</body>
+</html>

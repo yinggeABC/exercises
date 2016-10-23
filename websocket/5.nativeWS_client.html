@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    if (window.WebSocket){//检查浏览器是否支持websocket协议
+        var connection =  new WebSocket("ws://localhost:1234") //与服务器建立连接
+        connection.onopen = wsOpen; //连接建立后，触发open事件
+        function wsOpen(event){
+            console.log("Connected to: "+event.currentTarget.URL);
+
+            connection.send("Hello Server");//连接成功后，向服务器发送消息
+
+        }
+
+        connection.onclose = wsClose; //关闭连接后，触发close事件
+        function wsClose(){
+            console.log("Closed");
+        }
+
+        connection.onmessage = wsMessage; //客户端收到服务器的消息，触发message事件
+        function wsMessage(event){
+            console.log(event.data);
+        }
+
+        connection.onerror = wsError;//如果出现错误，浏览器就触发websocket的error事件
+        function wsError(event){
+            console.log("Error: "+event.data);
+            ws.close();
+        }
+    }
+</script>
+</body>
+</html>
