@@ -1,13 +1,38 @@
 MySql 默认端口号 3306
-1. 登录  shell->mysql -uroot -pxxxx
+1. 登录mysql客户端  shell->mysql -uroot(username) -pxxxx(password) -P3306(portname) -h127.0.0.1(hostname)
 2. MySQL常用指令  SELECT VERSION()显示服务器版本        SELECT NOW()显示当前日期  SELECT USER()显示当前用户
+SELECT DATABASE()显示当前打开的数据库名称
 3. SQL语句需要以分号结尾
 4. 创建数据库   CREATE DATABASE [IF NOT EXISTS] db_name CHARACTER SET [=] charname
 如果在创建过程中用[IF NOT EXISTS],若数据库已经存在，就显示warning，如果不用这个指令，则显示错误
 SHOW WARNINGS 显示警告信息
 5. SHOW DATABASES [LIKE “pattern"| where expr]  显示所有的数据库名称
 6.SHOW CREATE DATABASE db_name 显示数据库创建时候的信息
-7. 修改数据库  ALTER DATABASE db_name CHARACTERSET SET [=]charname
+7. 修改数据库  ALTER DATABASE db_name CHARACTER SET [=]charname
 8. 删除数据库  DROP DATABASE [IF EXISTS] db_name
 9.整数数据类型：
 tinyint(1Byte)  smallint(2B) mediumint(3B) int(4B) bigint(8B)
+10.浮点型
+FLOAT     DOUBLE
+11. 日期时间型(用的比较少，一般用数字类型取代)
+YEAR       TIME    DATE   DATETIME     TIMESTAMP
+12. 字符型
+CHAR VARCHAR TEXT ENUM("val1","val2"....)
+SET("val1","val2"...)
+13. 设计数据表
+CREATE TABLE [IF NOT EXISTS] table_name(column_name data_type,...)
+SHOW TABLES FROM db_name
+14. SHOW COLUMNS FROM table_name  显示表的字段值
+    INSERT INTO tbl_name [(col_name,..)] VALUES(val,...)  默认是给全部字段赋值
+    SELECT expr,... FROM tbl_name  SELECT * FROM tbl_name查看全部记录
+15. 自动编号，且必须与主键组合使用；默认情况下，起始值为1，每次增量为1； 而primary key不一定要和AUTO_INCREMENT一起使用
+16. UNIQUE KEY不是PRIMARY KEY, UNIQUE KEY字段可以为NULL,而PRIMARY KEY 不可以
+    唯一约束一张表可以存在多个，而主键约束一张表只能存在一个；
+    UNIQUE KEY和PRIMARY KEY一样，都不能有两个相同的值
+17. 默认约束   当插入记录时，如果没有明确给字段赋值，则自动赋予默认值
+CREATE TABLE tb(
+ username VARCHAR(20) DEFAULT "Lily")
+
+ 18.数据表操作： 插入记录   查找记录
+    记录操作  创建数据表     约束的使用（PRIMARY KEY, UNIQUE KEY, DEFAULT)
+
