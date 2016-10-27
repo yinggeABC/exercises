@@ -1,0 +1,13 @@
+MySql 默认端口号 3306
+1. 登录  shell->mysql -uroot -pxxxx
+2. MySQL常用指令  SELECT VERSION()显示服务器版本        SELECT NOW()显示当前日期  SELECT USER()显示当前用户
+3. SQL语句需要以分号结尾
+4. 创建数据库   CREATE DATABASE [IF NOT EXISTS] db_name CHARACTER SET [=] charname
+如果在创建过程中用[IF NOT EXISTS],若数据库已经存在，就显示warning，如果不用这个指令，则显示错误
+SHOW WARNINGS 显示警告信息
+5. SHOW DATABASES [LIKE “pattern"| where expr]  显示所有的数据库名称
+6.SHOW CREATE DATABASE db_name 显示数据库创建时候的信息
+7. 修改数据库  ALTER DATABASE db_name CHARACTERSET SET [=]charname
+8. 删除数据库  DROP DATABASE [IF EXISTS] db_name
+9.整数数据类型：
+tinyint(1Byte)  smallint(2B) mediumint(3B) int(4B) bigint(8B)
