@@ -49,5 +49,7 @@ CREATE TABLE tb(
  );
 
  20. DELETE FROM tb1 WHERE ID=3  从表中删除某个记录
- 21.
-
+ 21. 添加/删除列
+添加单列：ALTER TABLE tb1 ADD [COLUMN] col_name col_definition [FIRST| AFTER col_name]
+添加多列： ALTER TABLE tb1 ADD [COLUMN] (col_name col_definition,col_name col_def)
+删除单列  ALTER TABLE tb1 DROP [COLUMN] 
