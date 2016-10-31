@@ -18,12 +18,12 @@
  4. 删除记录   DELETE from tbl_name where where_condition
 
  ××××××××××××查询×××××××××××××××××××××××××××××××××
- 1.SELECT select_expr [
+ 1.SELECT select_expr [     //这些条件不是必须的，但是顺序必须是固定的
  FROM tbl_name
- WHERE where_condition
- GROUP BY col_name [ASC|DESC]
+ WHERE where_condition 对记录进行过滤，如果不指定WHERE则查询所有记录
+ GROUP BY col_name [ASC|DESC] ||以哪列作为分组
  HAVING group_condition 对分组后的结果进行过滤
- ORDER BY col_name [ASC|DESC] 按照哪些列进行拍训
+ ORDER BY col_name [ASC|DESC] 按照哪些列进行排列
  LIMIT offset, row_count从那条开始查询，查询多少条
  ]
  2.先插入主键，再插入外键；先删除外键，再删除主键
