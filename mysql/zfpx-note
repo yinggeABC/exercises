@@ -13,6 +13,7 @@
  **************mysql操作-行记录*************************
  1.插入记录  INSERT INTO tbl_name(col_name,col_name) VALUES(col_val,col_val);
    查询所有记录  SELECT * FROM tbl_name;
+   查询所有记录，并且返回部分列  SELECT col1,col2 from tbl_name;
  2.列级约束 AUTO_INCREMENT自动递增     PRIMARY KEY主键约束（主键自动为NOT NULL）     FOREIGN KEY外键约束
  3. 更新记录 UPDATE tbl_name SET col_name1=expr1,col_name2=exp2 WHERE where_condition
  4. 删除记录   DELETE from tbl_name where where_condition
@@ -22,7 +23,7 @@
  FROM tbl_name
  WHERE where_condition 对记录进行过滤，如果不指定WHERE则查询所有记录
  GROUP BY col_name [ASC|DESC] ||以哪列作为分组
- HAVING group_condition 对分组后的结果进行过滤
+ HAVING group_condition 对分组后的结果进行过滤  HAVING grade.score>=80
  ORDER BY col_name [ASC|DESC] 按照哪些列进行排列
  LIMIT offset, row_count从那条开始查询，查询多少条
  ]
