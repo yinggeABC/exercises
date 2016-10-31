@@ -49,7 +49,60 @@ CREATE TABLE tb(
  );
 
  20. DELETE FROM tb1 WHERE ID=3  从表中删除某个记录
- 21. 添加/删除列
+ 20.1. 添加/删除列
 添加单列：ALTER TABLE tb1 ADD [COLUMN] col_name col_definition [FIRST| AFTER col_name]
 添加多列： ALTER TABLE tb1 ADD [COLUMN] (col_name col_definition,col_name col_def)
-删除单列  ALTER TABLE tb1 DROP [COLUMN] 
+删除单列  ALTER TABLE tb1 DROP [COLUMN]
+ 21. 增加字段
+     ALTER TABLE tb1 ADD [COLUMN] col_name col_def
+     ALTER TABLE tb1 ADD (col_name col_def,col_name col_def...)
+     ALTER TABLE tb1 DROP col_name
+     ALTER TABLE tb1 DROP col_name, DROP col_name
+ 22. ALTER TABLE tb1 ADD [CONSTRAINT] PRIMARY KEY (index_col_name)
+         ALTER TABLE tb1 DROP PRIMARY KEY;
+         ALTER TABLE tb1 ADD [CONSTRAINT] UNIQUE KEY (col_name, col_name...)
+         ALTER TABLE tb1 ADD [CONSTRAINT] FOREIGN KEY (col_name) REFERENCES tb2 (col_name)
+         ALTER TABLE tb1 DROP FOREIGN KEY fk_symbol
+         ALTER TABLE tb1 ALTER col_name SET DEFAULT val;
+         ALTER TABLE tb1 ADD INDEX (col_name_list);
+         ALTER TABLE tb1 DROP INDEX col_name;
+
+ 23. 修改数据表
+         修改列定义   ALTER TABLE tbl_name MODIFY [COLUMN] col_name col_def [FIRST|AFTER col_name]可以修改类型、顺序等
+         如果要修改字段名字 ALTER TABLE tb1_name CHANGE [COLUMN] oldname new name col_def [FIRST|AFTER col_name]既可以修改列定义，也可以修改列名称
+         修改数据表名 ALTER TABLE tbl_name RENAME [TO|AS] new_tbname;
+                    RENAME TABLE tbl_name TO new_tbname;
+ 24. 数据表索引
+     如果没有索引，查询时mysql必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里的记录越多，这个操作的代价就越高。
+     如果在作为搜索的字段上创建索引，mysql无需扫描任何记录即可迅速得到目标记录的位置。如果索引
+     SELECT * FROM tb1 WHERE name = 一个外部输入，当数据不多时，执行效果不错。随着数据量增加，执行起来就慢了。若在name上建立索引，
+     ALTER TABLE tb1 ADD INDEX name,就可以提高查询速度了。
+
+ 25. 增加记录   INSERT tb1 VALUES (val1,val2,...),(val1,val2,...) 给tb1的所有字段赋两组值
+     更新记录   UPDATE tab_name SET col_name1={expr1|DEFAULT} col_name2={expr2|DEFAULT}... [WHERE condition]
+               如果没有设置条件，就默认更新全部记录
+     删除记录   DELETE FROM tab_name [WHERE condifiton] 如果不设置where条件，删除所有记录
+     查找记录   SELECT select_expr   select_expr查询表达式，SELECT username,id FROM users;
+               SELECT id AS userid,username AS uname FROM users;//将id和username赋予别名，可以与GROUPBY,ORDERBY和HAVING结合使用
+
+ 26. mysql中的运算符和函数   %代表任意个字符，而_代表任意一个字符
+ 字符函数  CONCAT()    CONCAT_WS（"|","w","s")//用”|“把w和s连接起来
+          FORMAT()//数字格式化    select format(12345.234,2);保留小数点后2位
+          LOWER() //转换为小写    select lower("UPCASE");
+          UPPER() //转换为大写
+          LEFT() // 获取左侧字符   select LEFT（”mysql",2) ->my
+          RIGHT() //获取右侧字符   select RIGHT("mysql",2) -> ql
+          LENGTH() 获取字符长度
+          TRIM（） 删除开头和结尾的空格
+          SUBSTRING（str,start,len）截取字符串,从start开始，截取2位
+          [NOT] LIKE,返回1或者0， SELECT "MySQL" LIKE "My%"
+select concat("a","b","c");
+select concat(student.id,student.name) from tbl_name; //将表格的列拼接起来
+27. 数值运算符和函数
+CEIL()
+DIV //整数除法  select 3 div 4 ->0
+FLOOR()
+MOD//select 3 mod 2->1    POWER()    ROUND()
+TRUNCATE() //数字截断  select truncate(125.89,1) 将125.89截断到小数点后1位
+
+

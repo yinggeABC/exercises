@@ -1,0 +1,33 @@
+1.登录 mysql -uroot -p123456 -h127.0.0.1
+2.授权  GRANT ALL PRIVILEGES ON studb.* TO 'root'@192.168.1.1' IDENTIFIED BY '123456'  WITH GRANT OPTION;（给studb的*表授权）
+3.mysql退出  exit;      quit;     \q
+
+ ****************mysql操作-表************************
+ 1.打开数据库  USE db_name
+ 2.创建表   CREATE TABLE table_name(colname data_type,...)
+ 3.删除表  DROP TABLE table_name;
+ 4.查看数据库下的数据表  SHOW TABLES;   查看当前在哪个数据库 SELECT DATABASE();
+ 5.显示表的定义 SHOW COLUMNS FROM tbl_name
+ 6.联合主键 PRIMARY KEY（col_name,col_name);
+
+ **************mysql操作-行记录*************************
+ 1.插入记录  INSERT INTO tbl_name(col_name,col_name) VALUES(col_val,col_val);
+   查询所有记录  SELECT * FROM tbl_name;
+   查询所有记录，并且返回部分列  SELECT col1,col2 from tbl_name;
+ 2.列级约束 AUTO_INCREMENT自动递增     PRIMARY KEY主键约束（主键自动为NOT NULL）     FOREIGN KEY外键约束
+ 3. 更新记录 UPDATE tbl_name SET col_name1=expr1,col_name2=exp2 WHERE where_condition
+ 4. 删除记录   DELETE from tbl_name where where_condition
+
+ ××××××××××××查询×××××××××××××××××××××××××××××××××
+ 1.SELECT select_expr [     //这些条件不是必须的，但是顺序必须是固定的
+ FROM tbl_name
+ WHERE where_condition 对记录进行过滤，如果不指定WHERE则查询所有记录
+ GROUP BY col_name [ASC|DESC] ||以哪列作为分组
+ HAVING group_condition 对分组后的结果进行过滤  HAVING grade.score>=80
+ ORDER BY col_name [ASC|DESC] 按照哪些列进行排列
+ LIMIT offset, row_count从那条开始查询，查询多少条
+ ]
+ 2.先插入主键，再插入外键；先删除外键，再删除主键
+ 3.表连接  select * from tab1,tab2,tab3   其实表连接是做了个笛卡尔积，即叉乘，如果想要匹配
+ SELECT * FROM tab1,tab2,tab3 WHERE fk1=tb1.id  AND fk2=tb2.id(假设tb3的fk1指向tb1的id,tb3的fk2指向tb2的id）
+ 例如: 查询全班的语文平均分   select AVG(grade.score) from grade,course where cid=course.id AND course.name="语文"
