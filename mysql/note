@@ -114,4 +114,11 @@ DATABASE（） 当前数据库
 LAST_INSERT_ID() 最后插入的ID号，表中应该有ID列
 USER（）  当前用户
 VERSION（）  版本信息
+30.
+函数中的复合语句需要包含在begin ...end之间
+31. 存储过程
+call procedure_name(para1,para2...)
+与自定义函数的区别： 存储过程可以返回多个值，而函数只能返回一个值；函数很少使用
+创建存储过程或者函数需要用delimiter 修改定界符
+
 
