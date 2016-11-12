@@ -121,3 +121,6 @@ call procedure_name(para1,para2...)
 与自定义函数的区别： 存储过程可以返回多个值，而函数只能返回一个值；函数很少使用
 创建存储过程或者函数需要用delimiter 修改定界符
 32.ubuntu中创建database一定要制定character set=utf8,否则中文乱码
+33. replace into tbl_name(colname) values (val)
+如果记录存在，则更新，如果不存在，则插入
+

@@ -1,0 +1,32 @@
+pwd  当前工作目录
+ls -a列出所有文件
+ls -al列出全部全部文件（l=long)
+mkdir -p data/test 如果data不存在，就用-p参数同时创建data和test
+rm -rf www
+cat查看文件内容
+echo 1>1.txt
+echo 1>>1.txt append写入
+
+vi编辑：
+:wq！对于只读文件，强行保存并退出
+/搜索
+n下一处    N上一处
+ctrl+f 向后翻页   ctrl+b向前翻页
+
+root
+su root切换到root用户
+exit 退出
+
+用户
+添加用户  useradd weimin
+设置密码  passwd 123456
+删除用户  userdel weimin
+
+登录远程服务器
+ssh root@ip    （ssh username@ip)
+
+history查看历史命令
+
+
+
+

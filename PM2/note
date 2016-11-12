@@ -1,0 +1,19 @@
+pm2可以自动重启所管的进程
+
+npm install -g pm2
+pm2 start app.js --name "crawl"启动并且命名
+pm2 list 查看所有应用
+pm2 restart crawl 重启应用
+pm2 stop crawl 停止应用
+pm2 delete crawl 删除应用
+ps -ef | grep node 查看node进程
+kill process_num 删除进程
+
+
+
+nginx
+高性能HTTP和反向代理服务器
+启动nginx nginx -c /etc/nginx/nginx.conf
+关闭nginx nginx -s stop
+重读配置文件 nginx -s reload kill -HUP nginx
+常用命令 service nginx {start|stop|status|restart|reload|configtest|}
