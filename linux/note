@@ -30,6 +30,7 @@ history查看历史命令
 git config --global co checkout
 
 cd ~切换到用户home目录    如果是root用户，则切换到root,如果是weimin,则切换到home/weimin
+cd - 切换到刚才所在的目录
 
 
 
