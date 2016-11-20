@@ -1,9 +1,16 @@
 var path = require("path")
 module.exports = {
-    entry:path.resolve(__dirname,"src/index.js"),
+    entry: path.resolve(__dirname,"src/index.js"),
     output:{
         path:path.resolve(__dirname,"build"),
         filename:"bundle.js"
+    },
+    devServer:{
+        publicPath:"/static/",
+        stats:{colors:true},
+        port:8080,
+        contentBase:"build",
+        inline:true
     },
     module:{
         loaders:[
@@ -13,9 +20,8 @@ module.exports = {
             }
         ]
     },
-    devServer:{
-        stats:{colors:true},
-        port:8080,
-        contentBase:"build"
+    resolve: {
+        extensions: ["", ".js", ".jsx", ".css", ".json"],
+
     }
 }
