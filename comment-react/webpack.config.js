@@ -3,17 +3,17 @@
  */
 var path = require("path");
 module.exports={
-    entry:path.resovle(__dirname,"app/main.js"),
-    output:{
-        path:"./buid",
-        filename:"bundle.js"
+    entry:path.resovle(__dirname,"app/main.js"),//入口文件
+    output:{//输出文件
+        path:"./buid",//定义输出文件路径
+        filename:"bundle.js"//指定打包文件名称
     },
     devServer:{
-        inline:true,
-        contentBase:"build"
+        inline:true,//
+        contentBase:"build"//指定静态文件的根目录
     },
     resolve:{
-        extensions:["",".js",".jsx",".css"]
+        extensions:["",".js",".jsx",".css"]//指定被import的文件的后缀
     },
     module:{
         loaders:[
