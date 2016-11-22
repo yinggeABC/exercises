@@ -3,9 +3,9 @@
  */
 var path = require("path");
 module.exports={
-    entry:path.resovle(__dirname,"app/main.js"),//入口文件
+    entry:path.resolve(__dirname,"app/main.js"),//入口文件
     output:{//输出文件
-        path:"./buid",//定义输出文件路径
+        path:"build",//定义输出文件路径
         filename:"bundle.js"//指定打包文件名称
     },
     devServer:{
@@ -21,7 +21,7 @@ module.exports={
                 test:/\.jsx?$/,
                 loader:"babel",
                 exclude:/node_modules/,
-                include:path.resolve(_dirname,"app")
+                include:path.resolve(__dirname,"app")
             },
             {
                 test:/\.css$/,
