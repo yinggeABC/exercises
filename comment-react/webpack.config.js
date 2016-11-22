@@ -1,0 +1,36 @@
+/**
+ * Created by MWei2 on 11/22/2016.
+ */
+var path = require("path");
+module.exports={
+    entry:path.resovle(__dirname,"app/main.js"),
+    output:{
+        path:"./buid",
+        filename:"bundle.js"
+    },
+    devServer:{
+        inline:true,
+        contentBase:"build"
+    },
+    resolve:{
+        extensions:["",".js",".jsx",".css"]
+    },
+    module:{
+        loaders:[
+            {
+                test:/\.jsx?$/,
+                loader:"babel",
+                exclude:/node_modules/,
+                include:path.resolve(_dirname,"app")
+            },
+            {
+                test:/\.css$/,
+                loader:"style!css"
+            },
+            {
+                test:/\.(eot|svg|ttf|woff|woff2)/,
+                loader:"url"
+            }
+        ]
+    }
+}
