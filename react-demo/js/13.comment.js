@@ -30,7 +30,7 @@ var Board = React.createClass({
     leaveMsg: function (event) {
         this.state.messages.push(this.refs.txtMsg.value);
         //每次状态都是一个新的state对象
-        localStorage.setItem('messages',JSON.stringify(this.state.messages));
+         localStorage.setItem('messages',JSON.stringify(this.state.messages));
         this.setState({
             messages:this.state.messages
         },function(){

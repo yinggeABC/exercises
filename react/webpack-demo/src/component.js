@@ -1,1 +1,3 @@
-export var name="zfpx";
+module.exports = function(){
+    alert("hello world")
+}
