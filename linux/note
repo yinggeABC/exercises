@@ -32,6 +32,9 @@ git config --global co checkout
 cd ~切换到用户home目录    如果是root用户，则切换到root,如果是weimin,则切换到home/weimin
 cd - 切换到刚才所在的目录
 
+git checkout -b dev 创建并且切换到分支dev
+git merge master dev合并master和dev分支
+
 
 
 
