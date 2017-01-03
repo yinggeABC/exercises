@@ -1,0 +1,13 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"babel src/index.js --out-file dest/output.js --source-maps inline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
