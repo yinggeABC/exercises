@@ -1,0 +1,20 @@
+1.GitHub是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub
+2. Git是一款免费、开源的分布式版本控制系统，用于敏捷高效处理任何项目
+git remote rm origin 断开和远程的连接
+git branch br
+git branch
+git checkout br
+git checkout -b br 创建并切换
+3.分支之间是相互独立的，git merge master develop将dev分支合并到master
+4. git push develop将develop分支推送到远端
+
+
+Babel
+1.将JS代码向下编译为ES5
+2.解析JSX
+3.拆分  plugin  preset
+npm install babel-cli -g
+npm install babel-cli --save-dev
+4. babel-cli提供两个命令：babel, babel-node(直接进入ES6的REPL，或者运行ES6文件）
+5.preset是plugin的集合, babel-preset-es2015,babel-preset-es2015-loose
+6. babel解析JSX语法，babel-preset-react
