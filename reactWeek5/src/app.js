@@ -1,14 +1,17 @@
 /* 入口启动文件 */
-import React,{Component} from "react"
-import ReactDOM,{render} from "react-dom"
+import React from "react"
+import {render} from "react-dom"
 import RootApp from "./containers/RootApp"
-import {Provider} from "react-redux";
-import store from "./redux/reducers";
+import store from "./redux/store"
+import {Provider} from "react-redux"
 
-const root = document.getElementById("app")
+const root = document.getElementById("app");
 render(
-    <Provider store = {store}>
-        <RootApp/>
-        </Provider>,
-    root);
+    <Provider store={store}>
+        <div>
+              {console.log("hello",store.getState())}
+            <RootApp/></div>
+        </Provider>
+        ,
+    root)
 

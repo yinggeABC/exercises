@@ -3,34 +3,27 @@
  */
 import React,{Component} from "react"
 import {connect} from "react-redux"
-import Counter from "../components/Counter"
-const mapStateToProps = (state)=>{
+import Calculator from "../components/Calculator"
+let mapStateToProps = (state)=>{
+    return {res:state.res};
+}
+
+let mapDispatchToProps=(dispatch)=>{
     return {
-        value:state
-    }
-}
-
-function Inc(){
-    return (dispatch,getState)=>setTimeout(function(){
-        dispatch({type:"Inc"});
-    },2000)
-}
-
-function Dec(){
-    return {type:"Dec"}
-}
-
-const mapDispatchToProps=(dispatch)=>{
-    return {
-        onInc(){
-            dispatch(Inc())
+        onInput1:(e)=>{
+          return  dispatch({type:"INPUT1",val:e.target.value})
         },
-        onDec(){
-            dispatch(Dec())
+        onInput2:(e)=>{
+          return  dispatch( {type:"INPUT2",val:e.target.value})
+        },
+        onSelect:(e)=>{
+          return  dispatch({type:"METHOD",val:e.target.value})
+        },
+        onCalc:()=>{
+          return dispatch({type:"CALC"})
         }
     }
 }
-
-let RootApp = connect(mapStateToProps,mapDispatchToProps)(Counter);
+const RootApp = connect(mapStateToProps,mapDispatchToProps)(Calculator);
 
 export default RootApp;
