@@ -5,6 +5,6 @@ import React, {Component} from "react"
 
 export default class Contact extends Component{
     render(){
-        return <h1>About Us</h1>
+        return <h1>About Us,{this.props.params.message},{this.props.params.id}</h1>
     }
 }
