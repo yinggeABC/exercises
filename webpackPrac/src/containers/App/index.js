@@ -1,16 +1,14 @@
 /**
  * Created by MWei2 on 1/21/2017.
  */
-import React,{Component} from "react"
-import Header from "./Header"
-import Footer from "./Footer"
+import React,{Component} from "react";
+import {render} from "react-dom";
+import Handler from "../../components/Handler"
+
 export default class App extends Component{
     render(){
         return (
-            <div class="app">
-                <Header/>
-                <Footer/>
-                </div>
+            <Handler></Handler>
         )
     }
 }
