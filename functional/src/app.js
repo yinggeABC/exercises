@@ -45,8 +45,12 @@ import ReactDOM,{render} from "react-dom"
 import {Provider} from "react-redux"
 import store from "./redux/store.js"
 import RootApp from "./containers/RootApp"
-
+import DevTools from "./containers/DevTools"
 render(
     <Provider store={store}>
-        <RootApp></RootApp>
+        <div>
+            <DevTools></DevTools>
+            <RootApp></RootApp>
+        </div>
+
     </Provider>,document.getElementById("app"));

@@ -1,9 +1,14 @@
 /**
- * Created by MWei2 on 1/23/2017.
+ * Created by weimin on 17-1-23.
  */
-
-const middlewareDemo = ({getState,dispatch})=>next=>action=>{
-  console.log(action)
+const loggerMiddleware = store=>next=>action=>{
+    const {getState,dispatch} = store;
+    console.group(action.type)
+    console.log("dispatching",action);
+    console.log("previous state",getState())
+    let res = next(action);
+    
+    console.log("next state",getState())
+    console.groupEnd(action.type);
+    return res;
 }
-
-export default middlewareDemo;

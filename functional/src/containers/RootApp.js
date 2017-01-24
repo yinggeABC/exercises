@@ -3,7 +3,8 @@
  */
 import React,{Component} from "react"
 import {connect} from "react-redux"
-import Counter from "../components/Counter"
+import Counter from "../components/Counter/Counter"
+import {onInc,onDec} from "../components/Counter/CounterRedux"
 
 const mapStateToProps = (state)=>{
     return {
@@ -11,13 +12,15 @@ const mapStateToProps = (state)=>{
     }
 };
 
+
+
 const mapDispatchToProps = (dispatch)=>{
     return {
         onInc:()=>{
-            dispatch({type:"INC"})
+            dispatch(onInc())
         },
         onDec:()=>{
-            dispatch({type:"DEC"})
+            dispatch(onDec())
         }
     }
 }
