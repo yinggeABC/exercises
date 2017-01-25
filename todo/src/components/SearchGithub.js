@@ -19,7 +19,7 @@ export default class SearchGithub extends Component{
 
     render(){
         return (
-            <div>
+            <div style={{marginTop:15}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group col-md-7">
                         <input type="text" className="form-control" ref={ref=>{this.username=ref}}/>

@@ -8,7 +8,7 @@ export default class UserRepos extends Component{
         let {repos,username} = this.props;
         return (
             <div>
-                <h3>Git Repos</h3>
+                <h3>用户仓库</h3>
                 <ul className="list-group">
                     {
                         repos.map((repo,index)=>{
